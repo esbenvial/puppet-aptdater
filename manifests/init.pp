@@ -20,6 +20,7 @@ class aptdater (
       key    => $key['key'],
       type   => $key['type'],
       user   => $user,
+      require => User[$user],
     }
   }
 
