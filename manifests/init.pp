@@ -15,7 +15,7 @@ class aptdater (
   }
 
   $publickeys.each |Hash $key| {
-    ssh_authorized_key  { $key['name']:
+    ssh_authorized_key  { "${user}-${key['name']}":
       ensure => present,
       key    => $key['key'],
       type   => $key['type'],
